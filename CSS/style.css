@@ -49,6 +49,7 @@ body{
     background: var(--bg);
 }
 
+
 section{
     padding: 2rem 7%;
 }
@@ -59,7 +60,7 @@ section{
     text-transform: uppercase;
     padding-top: 3rem;
     padding-bottom: 4rem;
-    font-size: 4.5rem;
+    font-size: 4.2rem;
 }
 
 .heading span{
@@ -71,7 +72,7 @@ section{
     margin-top: 1rem;
     display: inline-block;
     padding: .7rem 3rem;
-    font-size: 2.3rem;
+    font-size: 2rem;
     color: #fff;
     background: var(--main-color);
     cursor: pointer;
@@ -90,38 +91,36 @@ section{
     display: flex; /*para que cada a este una al lado de la otra*/
     align-items: center;
     justify-content: space-between; /*para que tanto el elemento a,nav y el div de los iconos se organicen como normalmente deberian estar en el nav*/
-    padding: 1rem 7% ;
+    padding: 0 7% ;
     border-bottom: var(--border);
     position: fixed; /*para que siempre se pueda ver*/
     top:0; left: 0;right: 0;
     z-index: 1000;
     font-size: 1.6rem;
-
 }
 
 .img-logo{
     overflow: hidden;
-    border: solid var(--main-color);
+    /* border: solid var(--main-color); */
     border-radius: 50%;
 }
 
 .header .logo img{
-   height: 11rem;
-   width: 12rem;
-   transform: scale(2);
+   height: 10rem;
+   width: 10rem;
+   transform: scale(1.6);
    border-radius: 50%;
 }
 
 .header .logo img:hover{
-   transform: scale(2.2);
+   transform: scale(2);
  }
 
 .header .navbar a{
     margin: 0 1rem;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     color: #fff;
-    padding: 0 .7rem;
-    letter-spacing: .2rem;
+    letter-spacing: .1rem;
 }
 
 .header .navbar a:hover{
@@ -134,7 +133,7 @@ section{
     display: flex;
     color:#fff;
     cursor: pointer;
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-left: 2rem;
 }
 
@@ -155,7 +154,7 @@ section{
     top: 115%; right: 7%;
     background: #fff;
     width: 50rem;
-    height: 6rem;
+    height: 5rem;
     display: flex;
     align-items: center;
     transform: scaleY(0); /*El valor 0 indica que el elemento se colapsará completamente en el eje Y, es decir, su altura se reducirá a 0, haciendo que no sea visible*/
@@ -192,7 +191,7 @@ section{
     top: 100%; /*le ponemos el 100%, de esta forma sale del header (padre) por lo que queda abajo de este*/
     right: -100%; /*se le pone el -100% para que no se vea en el viewport, ya si la persona le da al icono de carrito ponemos el right:0 para que quede normal, usando el toggle en js*/
     height: calc(100vh - 9.5rem);/*Esto es útil en situaciones donde se necesita reservar un espacio fijo en la parte superior o inferior del viewport para elementos como barras de navegación, encabezados fijos u otros elementos de interfaz que ocupan en este caso 9.5rem*/
-    width: 41rem;
+    width: 33rem;
     background: #ffe;
     padding: 0 1.5rem;
     border-left: solid var(--main-color);
@@ -213,7 +212,7 @@ section{
 
 .header .cart-items-container .cart-item .bi-x{
     position: absolute;
-    top: .1rem; right: 1rem;
+    top: .1rem; right: 0;
     font-size: 3rem;
     cursor: pointer;
     color: var(--black);
@@ -225,19 +224,19 @@ section{
 }
 
 .header .cart-items-container .cart-item img{
-    width: 150px;
-    height: 100px; 
+    width: 110px;
+    height: 80px; 
     border-style: dashed;
 } 
 
 .header .cart-items-container .cart-item .content h3{
-    font-size: 2.3rem;
+    font-size: 2rem;
     color: var(--black);
     padding-bottom: .5rem;
 } 
 
 .header .cart-items-container .cart-item .content .price{
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     color: var(--main-color);
      
 } 
@@ -270,17 +269,17 @@ section{
 }
 
 .home .content h3{
-    font-size: 7rem;
+    font-size: 6rem;
     text-transform: uppercase;
-    color: #fff;  
+    color:#fff;  
 }
 
 .home .content p{
-    font-size: 2.3rem;
+    font-size: 2.1rem;
     font-weight: lighter;
     line-height: 1.9;
     padding: 1rem 0;
-    color: #eee;
+    color: #bbb7b7;
     
 }
 
@@ -293,19 +292,23 @@ hr{
 
 /*----------------------------------------->about<------------------------------------------------------------- */
 
+.about {
+    height: 100%; /* le pongo una altura, para poder darle una altura al hijo con porcentajes */
+}
+
 .about .row{
     display: flex;
-    align-items: center;
+    align-items: center; 
     background: var(--black);
     flex-wrap: wrap;
-    width: 90%;
     margin: 0 auto;
+    
 }
 
 .about .row .image{
     flex: 1 1 45rem;
-    height: 100%;
-    width: 30%;
+    height: 40rem;
+    
 }
 
 .about .row .image img{
@@ -319,12 +322,12 @@ hr{
 }
 
 .about .row .content h3{
-    font-size: 4rem;
+    font-size: 3rem;
     color: #fff;
 }
 
 .about .row .content p{
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #ccc;
     padding: 1rem 0;
     line-height: 1.8;
@@ -334,15 +337,15 @@ hr{
 
 
 .menu .box-container img{
-    width: 14rem;
-    height: 13rem;
+    width: 11rem;
+    height: 10rem;
     border-radius: 50%;
     border: solid var(--main-color);
 }
 
 .menu .box-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
     margin: 0 auto;
     /*auto-fit es un valor especial que permite que el navegador ajuste el número de columnas en 
     función del espacio disponible. minmax(30rem, 1fr) es una función que establece un rango mínimo 
@@ -366,7 +369,7 @@ hr{
 
 .menu .box-container .box .price{
     color:#fff;
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     padding: .5rem 0;
 }
 
@@ -390,12 +393,13 @@ hr{
 
 .products .box-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
     margin: 0 auto;
     gap: 2rem;
 }
 
 .products .box-container .box{
+    height: 45rem;
     text-align: center;
     border: var(--border);
     padding: 2rem;
@@ -403,8 +407,8 @@ hr{
 }
 
 .products .box-container .box img{
-    width: 25rem;
-    height: 30rem;
+    width: 20rem;
+    height: 20rem;
 }
 
 
@@ -419,7 +423,7 @@ hr{
     width: 6rem;
     padding: 1rem;
     line-height: 5rem;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     border: var(--border);
     color: #fff;
     margin: .3rem;
@@ -432,7 +436,7 @@ hr{
 
 .products .box-container .box .content h3{
     color: #fff;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
 }
 
 .products .box-container .box .content .stars{
@@ -440,51 +444,52 @@ hr{
 }
 
 .products .box-container .box .content .stars i{
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     color: var(--main-color);
 }
 
 .products .box-container .box .content .price{
     color: #fff;
-    font-size: 2.8rem;
+    font-size: 2.3rem;
 }
 
 .products .box-container .box .content .price span{
     color: #d1d0d0;
     text-decoration: line-through;
     font-weight: lighter;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
 }
 
 /*----------------------------------------->review<------------------------------------------------------------- */
 
 .review .box-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
     gap: 1.5rem;
 }
 
 .review .box-container .box{
+    height: 45rem;
     border:var(--border);
     text-align: center;
     padding:3rem 2rem;
 }
 
 .review .box-container .box .quote{
-    width: 16rem;
-    height: 7rem;
+    width: 14rem;
+    height: 5rem;
 }
 
 .review .box-container .box p{
-    font-size: 2.1rem;
+    font-size: 1.6rem;
     line-height: 1.8;
     color: #9b9797;
     padding-bottom: 3rem;
 }
 
 .review .box-container .box .user{
-    width: 13rem;
-    height: 13rem;
+    width: 9rem;
+    height: 9rem;
     border-radius: 50%;
     border: solid var(--main-color);
     object-fit: cover;
@@ -492,12 +497,12 @@ hr{
 
 .review .box-container .box h3{
     padding: 1rem 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #fff;
 }
 
-.review .box-container .box h3 .stars i{
-    font-size: 1.5rem;
+.review .box-container .box .stars i{
+    font-size: 1.7rem;
     color: var(--main-color);
 }
 
@@ -562,13 +567,13 @@ hr{
 
 .blogs .box-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
     gap: 1.5rem;
 }
 
 .blogs .box-container .box{
+    height: 50rem;
     border: var(--border);
-
 }
 
 .blogs .box-container .box .image{
@@ -593,7 +598,7 @@ hr{
 
 
 .blogs .box-container .box .content .title{
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     line-height: 1.5;
     color: #fff;
 }
@@ -606,11 +611,11 @@ hr{
     color: var(--main-color);
     display: block;
     padding-top: 1rem;
-    font-size: 2.2rem;
+    font-size: 2rem;
 }
 
 .blogs .box-container .box .content p{
-    font-size: 2.3rem;
+    font-size: 1.8rem;
     line-height: 1.8;
     color: #999797;
     padding: 1rem 0;
@@ -628,14 +633,14 @@ hr{
 }
 
 .footer .share a{
-    height: 5rem;
-    width: 5rem;
-    padding: 1rem 1.5rem;
+    height: 3rem;
+    width: 3rem;
+    padding: 1rem 1.3rem;
     line-height: 5rem;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     color: #fff;
     border:var(--border);
-    margin: 1rem;
+    margin: 0.5rem;
     border-radius: 50%;
 }
 
@@ -647,7 +652,7 @@ hr{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     gap: 1rem;
 }
 
@@ -655,7 +660,7 @@ hr{
     padding: .7rem 2rem;
     color: #fff;
     border: var(--border);
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 .footer .links a:hover{
@@ -728,7 +733,7 @@ hr{
 @media (max-width: 768px){ 
 
    #menu-btn{
-    display: inline-block;
+    display: inline-block; /*para que aparezca*/
    }
 
    .header .navbar{
@@ -737,7 +742,7 @@ hr{
     background: #ffe;
     border-left: solid var(--main-color);
     border-bottom: solid var(--main-color);
-    width:30rem;
+    width:20rem;
     /* height: calc(100vh - 9.5rem); Esto es útil en situaciones donde se necesita reservar un espacio fijo en la parte superior o inferior del viewport para elementos como barras de navegación, encabezados fijos u otros elementos de interfaz que ocupan en este caso 9.5rem */
    }
 
@@ -777,6 +782,10 @@ hr{
 @media (max-width:450px ){ /*de igual forma a este media query se le van a aplicar los estilos del @media (max-width: 768px) */
     html{
         font-size: 50%;
+    }
+
+    .blogs .box-container .box{
+        margin-bottom: 2rem;
     }
 
 }
