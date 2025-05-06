@@ -1,22 +1,24 @@
 
-//------------------------------>EVENTOS<------------------------------------------------------------------------
-let navbar = document.querySelector(".navbar"); // recuperamos el elemento 
+// =========================== EVENTOS ==================================
+let navbar = document.querySelector(".navbar"); 
+
 document.getElementById("menu-btn").addEventListener("click", () => {
-    navbar.classList.toggle("active"); /*le agregamos la clase active (si no la tiene) */
+    navbar.classList.toggle("active"); // agregamos la clase active (si no la tiene) 
     /*si agregamos el evento para abrir el navbar, entonces quitamos los demas eventos (asi no se sobrepone uno sobre otro)*/
     searchForm.classList.remove("active");
     cartItem.classList.remove("active");
 });
 
-/*esta es otra forma para agregarle un evento a una etiqueta */
-let cartItem = document.querySelector(".cart-items-container"); // recuperamos el elemento 
+
+let cartItem = document.querySelector(".cart-items-container"); 
+
 document.querySelector("#cart-btn").onclick = () =>{
-    cartItem.classList.toggle("active"); /*le agregamos la clase active (si no la tiene) */
+    cartItem.classList.toggle("active"); /*agregamos la clase active (si no la tiene) */
     searchForm.classList.remove("active");
     navbar.classList.remove("active");
 }
 
-let searchForm = document.querySelector(".search-form"); // recuperamos el elemento 
+let searchForm = document.querySelector(".search-form"); 
 document.querySelector("#search-btn").onclick = () =>{
     searchForm.classList.toggle("active"); /*le agregamos la clase active (si no la tiene) */
     navbar.classList.remove("active");

@@ -1,6 +1,8 @@
 
-/* root para asignarle a variables diseños, colores, tipos de letras */
-:root{
+
+
+/* =========================== Css variables ============================ */
+:root{ 
     --main-color:#d3ad7f;
     --black:#13131a;
     --bg:#010103;
@@ -8,12 +10,13 @@
 
 }
 
-/* selector universal */
-*{
+/* =========================== Base ============================ */
+
+*{                         
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /*para que no se le agregue el tamaño solo al contenido si no que a todo en conjunto*/
+    box-sizing: border-box; 
     outline: none;
     border: none;
     text-decoration: none;
@@ -23,15 +26,14 @@
 
 
 html{
-    font-size: 62.5%; /*en este caso por defecto el tamaño de fuente de un navegador es de 16px, pero aqui en html le estamos diciendo que queremos el 62.5% de esos 16px que son 10px, por ende 1rem va a ser igual a 10px */
+    font-size: 62.5%; /*62.5% de esos 16px que son 10px, por ende 1rem va a ser igual a 10px */
     overflow-x: hidden ; /*cuando el contenido no sobresalga del eje x (ya sea arriba o abajo) */
     scroll-padding-top: 9rem ;/*Esta propiedad es particularmente útil cuando se desea proporcionar un espacio adicional en la parte superior de un elemento al que se ha desplazado mediante anclas o técnicas de desplazamiento automático, asegurando que el contenido no quede oculto detrás de elementos fijos como una barra de navegación.*/
     scroll-behavior: smooth;
 
 }
 
-/*los -webkit-scrollbar son selectores que permiten personalizar partes del navegador y otros elementos 
-específicos que no son accesibles con los selectores CSS estándar*/
+/* =============================== los -webkit-scrollbar ======================================== */
 html::-webkit-scrollbar{
     width: .8rem;
 }
@@ -53,6 +55,8 @@ body{
 section{
     padding: 2rem 7%;
 }
+
+/* =========================== Css reusable ============================ */
 
 .heading{
     text-align: center;
@@ -84,16 +88,16 @@ section{
     background-color: #a17c4e;
 }
 
-/*-----------------------------------------header------------------------------------------------------------- */
+/*======================================== header ========================================*/
 
 .header{
     background: var(--bg);
-    display: flex; /*para que cada a este una al lado de la otra*/
+    display: flex; 
     align-items: center;
-    justify-content: space-between; /*para que tanto el elemento a,nav y el div de los iconos se organicen como normalmente deberian estar en el nav*/
+    justify-content: space-between; 
     padding: 0 7% ;
     border-bottom: var(--border);
-    position: fixed; /*para que siempre se pueda ver*/
+    position: fixed; 
     top:0; left: 0;right: 0;
     z-index: 1000;
     font-size: 1.6rem;
@@ -157,8 +161,8 @@ section{
     height: 5rem;
     display: flex;
     align-items: center;
-    transform: scaleY(0); /*El valor 0 indica que el elemento se colapsará completamente en el eje Y, es decir, su altura se reducirá a 0, haciendo que no sea visible*/
-    transform-origin: top;/*La propiedad transform-origin en CSS se usa para establecer el punto de origen desde el cual se aplican las transformaciones (transform) a un elemento (para que tenga un efecto visual bonito)*/
+    transform: scaleY(0); /*para que no sea visible*/
+    transform-origin: top;/*punto de origen desde el cual se aplican las transformaciones (transform)*/
 
 }
 
@@ -188,16 +192,16 @@ section{
 
 .header .cart-items-container{
     position: absolute;
-    top: 100%; /*le ponemos el 100%, de esta forma sale del header (padre) por lo que queda abajo de este*/
-    right: -100%; /*se le pone el -100% para que no se vea en el viewport, ya si la persona le da al icono de carrito ponemos el right:0 para que quede normal, usando el toggle en js*/
-    height: calc(100vh - 9.5rem);/*Esto es útil en situaciones donde se necesita reservar un espacio fijo en la parte superior o inferior del viewport para elementos como barras de navegación, encabezados fijos u otros elementos de interfaz que ocupan en este caso 9.5rem*/
+    top: 100%; 
+    right: -100%; 
+    height: calc(100vh - 9.5rem);
     width: 33rem;
     background: #ffe;
     padding: 0 1.5rem;
     border-left: solid var(--main-color);
 }
 
-.header .cart-items-container.active{ /*.cart-items-container.active tiene que estar juntas ya que son dos clases de un mismo elemento o etiqueta*/
+.header .cart-items-container.active{ 
     right: 0;
 }
 
@@ -226,7 +230,8 @@ section{
 .header .cart-items-container .cart-item img{
     width: 110px;
     height: 80px; 
-    border-style: dashed;
+    /* border-style: dashed; */
+    border: 3px solid var(--main-color);
 } 
 
 .header .cart-items-container .cart-item .content h3{
@@ -248,9 +253,7 @@ section{
 
 
 
-/*----------------------------------------->home<------------------------------------------------------------- */
-
-
+/*======================================== home ========================================*/
 
 .home{
     min-height: 100vh;
@@ -291,10 +294,10 @@ hr{
     margin: 4rem 0;
 }
 
-/*----------------------------------------->about<------------------------------------------------------------- */
+/*======================================== about ========================================*/
 
 .about {
-    height: 100%; /* le pongo una altura, para poder darle una altura al hijo con porcentajes */
+    height: 100%; 
 }
 
 .about .row{
@@ -307,7 +310,7 @@ hr{
 }
 
 .about .row .image{
-    flex: 1 1 45rem;
+    flex: 1 1 10rem;
     height: 40rem;
     
 }
@@ -334,7 +337,7 @@ hr{
     line-height: 1.8;
 }
 
-/*----------------------------------------->menu<------------------------------------------------------------- */
+/*======================================== menu ========================================*/
 
 
 .menu .box-container img{
@@ -348,10 +351,6 @@ hr{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
     margin: 0 auto;
-    /*auto-fit es un valor especial que permite que el navegador ajuste el número de columnas en 
-    función del espacio disponible. minmax(30rem, 1fr) es una función que establece un rango mínimo 
-    y máximo para el ancho de las columnas.(sirven para hacer el responsive de forma automatica sin 
-    tener que usar media queries)*/
     gap: 1.7rem;
 }
 
@@ -390,7 +389,7 @@ hr{
     color:var(--black); 
 }
 
-/*----------------------------------------->products<------------------------------------------------------------- */
+/*======================================== products ========================================*/
 
 .products .box-container{
     display: grid;
@@ -461,7 +460,7 @@ hr{
     font-size: 1.4rem;
 }
 
-/*----------------------------------------->review<------------------------------------------------------------- */
+/*======================================== review ========================================*/
 
 .review .box-container {
     display: grid;
@@ -507,7 +506,7 @@ hr{
     color: var(--main-color);
 }
 
-/*----------------------------------------->contact<------------------------------------------------------------- */
+/*======================================== contact ========================================*/
 
 .contact .row{
     display: flex;
@@ -526,9 +525,6 @@ hr{
 
 .contact .row form{
     flex:1 1 45rem; /*flex-grow flex-shrink flex-basis*/
-    /*flex-grow: Esta propiedad especifica cuánto debe crecer un elemento en relación con los otros elementos flexibles dentro del mismo contenedor.
-      flex-shrink: Esta propiedad especifica cuánto debe encogerse un elemento en relación con los otros elementos flexibles dentro del mismo contenedor cuando el espacio es limitado.
-      flex-basis: Esta propiedad define la base o tamaño inicial de un elemento antes de que se apliquen flex-grow y flex-shrink.*/
     padding: 5rem 2rem;
     text-align: center;
 }
@@ -564,7 +560,11 @@ hr{
     background: none;
 }
 
-/*----------------------------------------->blog<------------------------------------------------------------- */
+/*======================================== blog ========================================*/
+
+.blogs {
+    margin-bottom: 10rem;
+}
 
 .blogs .box-container{
     display: grid;
@@ -622,7 +622,7 @@ hr{
     padding: 1rem 0;
 }
 
-/*----------------------------------------->footer<------------------------------------------------------------- */
+/*======================================== footer ========================================*/
 
 .footer{
     background-color:var(--black);
@@ -688,32 +688,7 @@ hr{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*----------------------------------------------------media queries-----------------------------------------------------------------------------*/
+/*======================================== media queries ========================================*/
 
 @media (max-width:991px ){ /*que se apliquen estos estilos hasta maximo 991px, si tiene mas de eso, que no los aplique*/
     html{
@@ -739,15 +714,15 @@ hr{
 
    .header .navbar{
     position: absolute;
-    top:100%; right: -100%; /*se le pone el -100% para que no se vea en el viewport, ya si la persona le da al icono de carrito ponemos el right:0 para que quede normal, usando el toggle en js*/
+    top:100%; right: -100%; 
     background: #ffe;
     border-left: solid var(--main-color);
     border-bottom: solid var(--main-color);
     width:20rem;
-    /* height: calc(100vh - 9.5rem); Esto es útil en situaciones donde se necesita reservar un espacio fijo en la parte superior o inferior del viewport para elementos como barras de navegación, encabezados fijos u otros elementos de interfaz que ocupan en este caso 9.5rem */
+    
    }
 
-   .header .navbar.active{ /*.navbar.active tiene que estar juntas ya que son dos clases de un mismo elemento o etiqueta*/
+   .header .navbar.active{ 
     right:0;
    }
 
@@ -780,7 +755,7 @@ hr{
 }
 
 
-@media (max-width:450px ){ /*de igual forma a este media query se le van a aplicar los estilos del @media (max-width: 768px) */
+@media (max-width:450px ){ 
     html{
         font-size: 50%;
     }
@@ -790,3 +765,4 @@ hr{
     }
 
 }
+
