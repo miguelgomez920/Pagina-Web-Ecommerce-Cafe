@@ -2,7 +2,7 @@
 
 Este proyecto es una **tienda virtual de café** construida con HTML, CSS y JavaScript puro. Simula una experiencia de compra moderna, con secciones como menú, productos, blog y contacto, todo dentro de una interfaz visual atractiva y adaptable.
 
-## 🚀 Funcionalidades destacadas
+# 🚀 Funcionalidades destacadas
 
 - Página principal con imagen de fondo atractiva
 - Menú interactivo con productos de café
