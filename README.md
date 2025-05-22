@@ -20,11 +20,10 @@ Este proyecto es una **tienda virtual de café** construida con HTML, CSS y Java
 - **JavaScript** — Comportamientos interactivos
 - **Git** — Control de versiones
 
-▶️ Cómo ejecutar el proyecto
-Descarga o clona este repositorio.
+## ▶️ Cómo ejecutar el proyecto
 
-Abre el archivo index.html en tu navegador favorito.
-
-¡Listo! Ya puedes navegar por la tienda virtual.
+1. Descarga o clona este repositorio.
+2. Abre el archivo `index.html` en tu navegador favorito.
+3. ¡Listo! Ya puedes navegar por la tienda virtual.
 
 No requiere instalación adicional ni servidor backend.
